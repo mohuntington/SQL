@@ -24,8 +24,8 @@ SELECT * FROM bag_store
 ORDER BY price desc;
 
 --What items are $20 or more and what colors do they come in? 
-SELECT item, color, price FROM bag_store WHERE price >=20 ORDER BY price desc;
+SELECT id, item, color, price FROM bag_store WHERE price >=20 ORDER BY price desc;
 
 --How many of each item are there?
-SELECT item, SUM(quantity) FROM bag_store GROUP BY item;
+SELECT id, item, SUM(quantity) FROM bag_store GROUP BY item;
 
