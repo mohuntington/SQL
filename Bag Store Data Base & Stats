@@ -1,0 +1,31 @@
+--Create a bag store database
+
+CREATE TABLE bag_store (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, price INTEGER, color TEXT);
+
+INSERT INTO bag_store VALUES 
+(1, "fanny pack", 7, 15, "red"),
+(2, "backpack", 3, 35, "blue"),
+(3, "purse", 4, 20, "black"),
+(4, "computer bag", 5, 20, "brown"),
+(5, "tote", 9, 5, "taupe"),
+(6, "toiletry bag", 7, 8, "green"),
+(7, "gym bag", 3, 25, "grey"),
+(8, "weekender", 4, 50, "purple"),
+(9, "carry-on", 7, 80, "maple"),
+(10, "checked roller", 9, 100, "black"),
+(11, "beach bag", 4, 10, "brown"),
+(12, "duffle", 6, 15, "blue"),
+(13, "fanny pack", 8, 15, "yellow"),
+(14, "backpack", 3, 35, "brown"),
+(15, "carry-on", 9, 80, "black");
+
+--Display the database ordered by price
+SELECT * FROM bag_store
+ORDER BY price desc;
+
+--What items are $20 or more and what colors do they come in? 
+SELECT item, color, price FROM bag_store WHERE price >=20 ORDER BY price desc;
+
+--How many of each item are there?
+SELECT item, SUM(quantity) FROM bag_store GROUP BY item;
+
