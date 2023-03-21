@@ -1,0 +1,47 @@
+CREATE TABLE famous_people (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+profession TEXT);
+
+INSERT INTO famous_people (name, profession) VALUES 
+("Reese Witherspoon", "Actor"),
+("Sandra Bullock", "Actor"),
+("Tom Hanks", "Actor"),
+("Jim Carrey", "Actor"),
+("Celine Dion", "Singer"),
+("Beyonce", "Singer"),
+("Taylor Swift", "Singer"),
+("Harry Styles", "Singer"),
+("Frank Sinatra", "Singer"),
+("Megan Rapinoe", "Athlete"),
+("Simone Biles", "Athlete"),
+("Russell Wilson", "Athlete"),
+("Kobe Bryant", "Athlete");
+
+CREATE TABLE movies (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+title TEXT,
+actor_id INTEGER);
+
+INSERT INTO movies (title, actor_id) VALUES
+("Legally Blonde", "1"),
+("The Blind Side", "2"),
+("Gravity", "2"),
+("Forrest Gump", "3"),
+("Sleepless in Seattle", "3"),
+("The Grinch", "4");
+
+CREATE TABLE sports (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+sport TEXT,
+athlete_id INTEGER);
+
+INSERT INTO sports (sport, athlete_id) VALUES
+("Basketball", "13"),
+("Gymnastics", "11"),
+("Soccer", "10"),
+("Football", "12");
+
+SELECT famous_people.name, movies.title FROM famous_people JOIN movies ON famous_people.id=movies.actor_id;
+
+SELECT famous_people.name, sports.sport FROM famous_people JOIN sports ON famous_people.id=sports.athlete_id;
